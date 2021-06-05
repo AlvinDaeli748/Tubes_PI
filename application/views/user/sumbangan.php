@@ -47,7 +47,13 @@
 
       <label for="sumbangan" id="sumbangan-label">
         Apa yang ingin disumbangkan?
-        <textarea id="sumbangan" cols="30" rows="10"></textarea>
+      </label>
+      <input type="radio" name="sumbangan" value="1" checked /> Barang <br />
+      <input type="radio" name="sumbangan" value="2" /> Uang <br /> <br>
+
+      <label for="Keterangan_sumbangan" id="sumbangan-label">
+        Keterangan Sumbangan?
+        <textarea id="Keterangan_sumbangan" cols="30" rows="10"></textarea>
       </label>
 
       <div class="submit"><input type="submit" value="Submit"></div>
