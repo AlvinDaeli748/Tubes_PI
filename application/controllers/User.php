@@ -9,8 +9,8 @@ class User extends CI_Controller {
  
 	// }
 		
-	public function index(){
-		$this->load->view('User/login');
+	public function sumbangan(){
+		$this->load->view('User/sumbangan');
 	}
 
 	public function checkDB($pass){
