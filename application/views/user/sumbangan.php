@@ -23,8 +23,8 @@
         <h1 id="title">Form Pendaftaran Sumbangan</h1>
     <p id="description">Please fill the form, thank you.</p>
 
-    <form id="survey-form">
-    <form enctype="multipart/form-data" method="post">
+    <?php echo form_open('User/tambah_sumbangan_act', 'class="login100-form validate-form"'); ?>
+    <form id="survey-form" enctype="multipart/form-data" method="post">
       <label for="name" id="name-label">
         Nama Lengkap
         <input type="text" name="nama" id="name" placeholder="tuliskan nama lengkap anda" required />
@@ -57,7 +57,8 @@
       </label>
 
       <div class="submit"><input type="submit" value="Submit"></div>
-    </form>
+	<?php form_close(); ?>   
+	</form>
     <br><br>
        </div>
        <div id="footer">
