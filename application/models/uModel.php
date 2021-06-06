@@ -16,4 +16,8 @@ class uModel extends CI_Model{
 			return false;
 		}
 	}
+
+	public function input_sumbangan($table,$data){
+ 		$this->db->insert($table,$data);
+ 	}
 }
