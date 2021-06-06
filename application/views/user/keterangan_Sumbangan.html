@@ -5,22 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/user_style.css" />
-
+    <link rel="stylesheet" href="user_style.css" />
 </head>
 <body>
     <div id="header">
         <div id="nav">
         <ul>
             <li><a href="">Home</a></li>
-            <li><a href=""  class="on" >Sumbangan</a></li>
+            <li><a href="">Sumbangan</a></li>
             <li><a href="">About</a></li>
             <li><a href="">Contact</a></li>
         </ul>
         </div>
        </div>
        <div id="content">
-        <h1 id="title">Form Pendaftaran Sumbangan</h1>
+        <h1 id="title">Form Keterangan Sumbangan</h1>
     <p id="description">Please fill the form, thank you.</p>
 
     <form id="survey-form">
@@ -35,19 +34,20 @@
         <input type="email" id="email" placeholder="tuliskan email anda" required />
       </label>
 
-      <label for="sifat" id="sifat-label"> Sumbangan bersifat? </label>
+      <label for="waktu" id="waktu-label">
+        Tanggal memberikan sumbangan?
+        </label>
+        <input type="date" /><br><br>
+      
 
-      <input type="radio" name="sifat" value="1" checked /> Pribadi <br />
-      <input type="radio" name="sifat" value="2" /> Angkatan <br /> <br>
-
-      <label for="kelulusan" id="kelulusan-label">
-        Tahun kelulusan
-        <input type="number" id="kelulusan" placeholder="Tahun keberapa anda lulus?" min="1" />
+      <label for="nama_petugas" id="name-label">
+        Nama Petugas yang Menerima ?
+        <input type="text" id="nama_petugas" placeholder="tuliskan nama Petugas yang menerima" required />
       </label>
 
-      <label for="sumbangan" id="sumbangan-label">
-        Apa yang ingin disumbangkan?
-        <textarea id="sumbangan" cols="30" rows="10"></textarea>
+      <label for="Keterangan" id="Keterangan-label">
+        Keterangan? (opsional)
+        <textarea id="Keterangan" cols="30" rows="10"></textarea>
       </label>
 
       <div class="submit"><input type="submit" value="Submit"></div>

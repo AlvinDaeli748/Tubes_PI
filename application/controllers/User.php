@@ -8,7 +8,11 @@ class User extends CI_Controller {
 		$this->load->model('uModel');
 	}
 		
+<<<<<<< HEAD
 	public function index(){
+=======
+	public function sumbangan(){
+>>>>>>> 78bf5b4ea8b82d63dfc881255d905851e57fc5f5
 		$this->load->view('User/sumbangan');
 	}
 
