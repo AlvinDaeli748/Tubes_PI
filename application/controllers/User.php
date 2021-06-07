@@ -29,13 +29,15 @@ class User extends CI_Controller {
         $sifat = $this->input->post('sifat');
         $kelulusan = $this->input->post('kelulusan');
         $sumbangan = $this->input->post('sumbangan');
+		$keterangan_sumbangan = $this->input->post('keterangan_sumbangan');
 
         $data = array(
             'nama' => $nama,
             'email' => $email,
             'sifat' => $sifat,
             'kelulusan' => $kelulusan,
-            'sumbangan' => $sumbangan
+            'sumbangan' => $sumbangan,
+			'keterangan_sumbangan' => $keterangan_sumbangan
         );
 
         $this->uModel->input_sumbangan('sumbangan', $data);

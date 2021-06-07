@@ -53,7 +53,7 @@
 
       <label for="Keterangan_sumbangan" id="sumbangan-label">
         Keterangan Sumbangan?
-        <textarea id="Keterangan_sumbangan" cols="30" rows="10"></textarea>
+        <textarea name="keterangan_sumbangan" id="Keterangan_sumbangan" cols="30" rows="10"></textarea>
       </label>
 
       <div class="submit"><input type="submit" value="Submit"></div>

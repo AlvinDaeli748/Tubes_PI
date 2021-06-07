@@ -13,7 +13,7 @@
 			<input type="text" name="uname" class="form_login" placeholder="Input Username">
  
 			<label>Password</label>
-			<input type="text" name="pass" class="form_login" placeholder="Input Password">
+			<input type="password" name="pass" class="form_login" placeholder="Input Password">
  
 			<input type="submit" class="tombol_login" value="LOGIN">
 		</form>

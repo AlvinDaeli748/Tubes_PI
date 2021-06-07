@@ -220,7 +220,7 @@
                                             <img src="assets/img/1.png" width="40px" height="40px" alt="">
                                             <div>
                                                 <h4>Tiara Amalia</h4>
-                                                <small>Gusti Kanjeng Ratu</small>
+                                                <small>Backend</small>
                                             </div>
                                         </div>
                                         <div class="contact">
