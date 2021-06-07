@@ -42,7 +42,24 @@
 
       <label for="kelulusan" id="kelulusan-label">
         Tahun kelulusan
-        <input type="number" name="kelulusan" id="kelulusan" placeholder="Tahun keberapa anda lulus?" min="1" required="" />
+        <select id="date-dropdown">
+
+        </select>
+          <script>
+            let dateDropdown = document.getElementById('date-dropdown');
+
+            let currentYear = new Date().getFullYear();
+            let earliestYear = 1970;
+
+            while (currentYear >= earliestYear) {
+              let dateOption = document.createElement('option');
+              dateOption.text = currentYear;
+              dateOption.value = currentYear;
+              dateDropdown.add(dateOption);
+              currentYear -= 1;
+            }
+          </script>
+        <!-- <input type="number" name="kelulusan" id="kelulusan" placeholder="Tahun keberapa anda lulus?" min="1" required="" /> -->
       </label>
 
       <label for="sumbangan" id="sumbangan-label">
@@ -57,7 +74,7 @@
       </label>
 
       <div class="submit"><input type="submit" value="Submit"></div>
-	<?php form_close(); ?>   
+	<?php form_close(); ?>
 	</form>
     <br><br>
        </div>
