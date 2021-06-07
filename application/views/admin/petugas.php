@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/admin_style.css"/>
+    <link rel="stylesheet" href="<?php echo base_url('assets/admin_style.css'); ?>"/>
 </head>
 <body>
 
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <div class="sidebar-brand">
-            <h2><span class="lab la-accusoft"></span><span>Admin</span></h2>
+            <h2><span class="lab la-accusoft"></span><span>Petugas</span></h2>
         </div>
 
         <div class="sidebar-menu">
@@ -26,10 +26,6 @@
                 <li>
                     <a href=""><span class="las la-users"></span>
                         <span>Petugas</span></a>
-                </li>
-                <li>
-                    <a href=""><span class="las la-user-tie"></span>
-                        <span>Tambah Petugas</span></a>
                 </li>
                 <li>
                     <a href=""><span class="las la-receipt"></span>
@@ -59,10 +55,10 @@
             </div>
 
             <div class="user-wrapper">
-                <img src="assets/img/1.png" width="40px" height="40px" alt="">
+                <img src="1.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Willi Nardo</h4>
-                    <small>Super admin</small>
+                    <small>Petugas</small>
                 </div>
             </div>
         </header>
@@ -217,7 +213,7 @@
                                 <div class="card-body">
                                     <div class="customer">
                                         <div class="info">
-                                            <img src="assets/img/1.png" width="40px" height="40px" alt="">
+                                            <img src="1.png" width="40px" height="40px" alt="">
                                             <div>
                                                 <h4>Tiara Amalia</h4>
                                                 <small>Gusti Kanjeng Ratu</small>
@@ -232,7 +228,7 @@
 
                                     <div class="customer">
                                         <div class="info">
-                                            <img src="assets/img/1.png" width="40px" height="40px" alt="">
+                                            <img src="1.png" width="40px" height="40px" alt="">
                                             <div>
                                                 <h4>Willi Nardo</h4>
                                                 <small>Frontend</small>
@@ -247,7 +243,7 @@
 
                                     <div class="customer">
                                         <div class="info">
-                                            <img src="assets/img/1.png" width="40px" height="40px" alt="">
+                                            <img src="1.png" width="40px" height="40px" alt="">
                                             <div>
                                                 <h4>Alvin Daeli</h4>
                                                 <small>Backend</small>
@@ -262,7 +258,7 @@
 
                                     <div class="customer">
                                         <div class="info">
-                                            <img src="assets/img/1.png" width="40px" height="40px" alt="">
+                                            <img src="1.png" width="40px" height="40px" alt="">
                                             <div>
                                                 <h4>Timothy Sebastian</h4>
                                                 <small>Fullstack</small>
@@ -277,7 +273,7 @@
 
                                     <div class="customer">
                                         <div class="info">
-                                            <img src="assets/img/1.png" width="40px" height="40px" alt="">
+                                            <img src="1.png" width="40px" height="40px" alt="">
                                             <div>
                                                 <h4>Ruth Calista</h4>
                                                 <small>Fullstack</small>

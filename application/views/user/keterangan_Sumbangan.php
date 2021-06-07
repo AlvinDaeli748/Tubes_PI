@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/user_style.css" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/user_style.css');?>" />
 </head>
 <body>
     <div id="header">
@@ -22,8 +22,7 @@
         <h1 id="title">Form Keterangan Sumbangan</h1>
     <p id="description">Please fill the form, thank you.</p>
 
-    <form id="survey-form">
-    <form enctype="multipart/form-data" method="post">
+    <form id="survey-form" enctype="multipart/form-data" method="post">
       <label for="name" id="name-label">
         Nama Lengkap
         <input type="text" id="name" placeholder="tuliskan nama lengkap anda" required />

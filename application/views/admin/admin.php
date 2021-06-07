@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/admin.css"/>
+    <link rel="stylesheet" href="<?php echo base_url('assets/admin_style.css');?>"/>
 </head>
 <body>
 
@@ -20,7 +20,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href=""><span class="las la-igloo"></span>
+                    <a href="" class="active"><span class="las la-igloo"></span>
                         <span>Dashboard</span></a>
                 </li>
                 <li>
@@ -32,7 +32,7 @@
                         <span>Tambah Petugas</span></a>
                 </li>
                 <li>
-                    <a href="" class="active"><span class="las la-receipt"></span>
+                    <a href=""><span class="las la-receipt"></span>
                         <span>Sumbangan</span></a>
                 </li>
                 <li>
@@ -59,7 +59,7 @@
             </div>
 
             <div class="user-wrapper">
-                <img src="1.png" width="40px" height="40px" alt="">
+                <img src="assets/img/1.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Willi Nardo</h4>
                     <small>Super admin</small>
@@ -67,15 +67,53 @@
             </div>
         </header>
         <main>
-            
+            <div class="cards">
+                <div class="card-single">
+                    <div>
+                        <h1>5</h1>
+                        <span>Petugas</span>
+                    </div>
+                    <div>
+                        <span class="las la-users"></span>
+                    </div>
+                </div>
+
+
+                <div class="card-single">
+                    <div>
+                        <h1>124</h1>
+                        <span>Sumbangan</span>
+                    </div>
+                    <div>
+                        <span class="las la-receipt"></span>
+                    </div>
+                </div>
+
+                
+                <div class="card-single">
+                    <div>
+                        <h1>10</h1>
+                        <span>Tasks</span>
+                    </div>
+                    <div>
+                        <span class="las la-clipboard-list"></span>
+                    </div>
+                </div>
+
+                
+            </div>
 
             <div class="recent-grid">
                 <div class="projects">
                     <div class="card">
                         <div class="card-header">
                             <h3>Sumbangan</h3>
+
+                            <button>See all <span class="las la-arrow-right">   
+                            </span></button>
                         </div>
-                       
+                    
+
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table width="100%">
@@ -167,7 +205,96 @@
                     </div>
                 </div>
                     
+                        <div class="customers">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>Petugas</h3>
+
+                                    <button>See all <span class="las la-arrow-right">   
+                                    </span></button>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="customer">
+                                        <div class="info">
+                                            <img src="assets/img/1.png" width="40px" height="40px" alt="">
+                                            <div>
+                                                <h4>Tiara Amalia</h4>
+                                                <small>Gusti Kanjeng Ratu</small>
+                                            </div>
+                                        </div>
+                                        <div class="contact">
+                                            <span class="las la-user-circle"></span>
+                                            <span class="las la-comment"></span>
+                                            <span class="las la-phone"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="customer">
+                                        <div class="info">
+                                            <img src="assets/img/1.png" width="40px" height="40px" alt="">
+                                            <div>
+                                                <h4>Willi Nardo</h4>
+                                                <small>Frontend</small>
+                                            </div>
+                                        </div>
+                                        <div class="contact">
+                                            <span class="las la-user-circle"></span>
+                                            <span class="las la-comment"></span>
+                                            <span class="las la-phone"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="customer">
+                                        <div class="info">
+                                            <img src="assets/img/1.png" width="40px" height="40px" alt="">
+                                            <div>
+                                                <h4>Alvin Daeli</h4>
+                                                <small>Backend</small>
+                                            </div>
+                                        </div>
+                                        <div class="contact">
+                                            <span class="las la-user-circle"></span>
+                                            <span class="las la-comment"></span>
+                                            <span class="las la-phone"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="customer">
+                                        <div class="info">
+                                            <img src="assets/img/1.png" width="40px" height="40px" alt="">
+                                            <div>
+                                                <h4>Timothy Sebastian</h4>
+                                                <small>Fullstack</small>
+                                            </div>
+                                        </div>
+                                        <div class="contact">
+                                            <span class="las la-user-circle"></span>
+                                            <span class="las la-comment"></span>
+                                            <span class="las la-phone"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="customer">
+                                        <div class="info">
+                                            <img src="assets/img/1.png" width="40px" height="40px" alt="">
+                                            <div>
+                                                <h4>Ruth Calista</h4>
+                                                <small>Fullstack</small>
+                                            </div>
+                                        </div>
+                                        <div class="contact">
+                                            <span class="las la-user-circle"></span>
+                                            <span class="las la-comment"></span>
+                                            <span class="las la-phone"></span>
+                                        </div>
+                                    </div>
+
+                                </div>
                         
+                            </div>
+                    
+                        </div>
             
             </div>
 

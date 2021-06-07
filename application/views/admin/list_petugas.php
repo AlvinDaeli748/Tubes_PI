@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/admin.css"/>
+    <link rel="stylesheet" href="<?php echo base_url('assets/admin.css');?>"/>
 </head>
 <body>
 
