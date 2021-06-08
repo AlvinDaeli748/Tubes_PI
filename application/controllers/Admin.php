@@ -46,4 +46,12 @@ class Admin extends CI_Controller {
 		$this->session->set_flashdata('logged_out', 'Anda Telah Logout');
 		redirect('Admin');
 	}
+
+	public function ket_sumbangan() {
+		$this->load->view('admin/admin_sumbangan');
+	}
+
+	public function petugas() {
+		$this->load->view('admin/petugas');
+	}
 }

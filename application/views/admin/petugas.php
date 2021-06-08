@@ -20,11 +20,11 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="" class="active"><span class="las la-igloo"></span>
+                    <a href=""><span class="las la-igloo"></span>
                         <span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-users"></span>
+                    <a href="" class="active"><span class="las la-users"></span>
                         <span>Petugas</span></a>
                 </li>
                 <li>

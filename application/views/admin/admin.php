@@ -24,7 +24,7 @@
                         <span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-users"></span>
+                    <a href="<?php echo base_url('Admin/petugas');?>"><span class="las la-users"></span>
                         <span>Petugas</span></a>
                 </li>
                 <li>
@@ -107,7 +107,7 @@
                 <div class="projects">
                     <div class="card">
                         <div class="card-header">
-                            <h3>Sumbangan</h3>
+                            <h2>Sumbangan</h2>
 
                             <button>See all <span class="las la-arrow-right">   
                             </span></button>
@@ -119,10 +119,10 @@
                                 <table width="100%">
                                     <thread>
                                         <tr>
-                                            <td>Nama</td>
-                                            <td>Sifat Sumbangan</td>
-                                            <td>Status</td>
-                                            <td>Action</td>
+                                            <td><h3>Nama</h3></td>
+                                            <td><h3>Sifat Sumbangan</h3></td>
+                                            <td><h3>Status</h3></td>
+                                            <td><h3>Action</h3></td>
                                         </tr>
                                     </thread>
                                     <tbody>
@@ -222,11 +222,6 @@
                                                 <h4>Tiara Amalia</h4>
                                                 <small>Backend</small>
                                             </div>
-                                        </div>
-                                        <div class="contact">
-                                            <span class="las la-user-circle"></span>
-                                            <span class="las la-comment"></span>
-                                            <span class="las la-phone"></span>
                                         </div>
                                     </div>
 

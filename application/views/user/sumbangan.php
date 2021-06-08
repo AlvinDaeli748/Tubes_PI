@@ -12,7 +12,7 @@
     <div id="header">
         <div id="nav">
         <ul>
-            <li><a href="">Home</a></li>
+            <li><a href="<?php echo base_url('User/home');?>">Home</a></li>
             <li><a href=""  class="on" >Sumbangan</a></li>
             <li><a href="">About</a></li>
             <li><a href="">Contact</a></li>

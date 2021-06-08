@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/user_style.css" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/user_style.css');?>" />
 </head>
 <body>
     <div id="header">
         <div id="nav">
         <ul>
             <li><a href="" class="on">Home</a></li>
-            <li><a href="">Sumbangan</a></li>
+            <li><a href="<?php echo base_url('user/sumbangan');?>">Sumbangan</a></li>
             <li><a href="">About</a></li>
             <li><a href="">Contact</a></li>
         </ul>

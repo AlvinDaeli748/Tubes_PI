@@ -23,7 +23,7 @@ class User extends CI_Controller {
 		$this->load->view('user/sumbangan', $this->session->flashdata('data'));
 	}
 
-	function tambah_sumbangan_act() {
+	public function tambah_sumbangan_act() {
         $nama = $this->input->post('nama');
         $email = $this->input->post('email');
         $sifat = $this->input->post('sifat');
@@ -41,9 +41,12 @@ class User extends CI_Controller {
         );
 
         $this->uModel->input_sumbangan('sumbangan', $data);
+
+		// redirect(base_url().'user/sumbangan');
     }
 
-	
-
+	public function home() {
+		$this->load->view('user/home');
+	}
 
 }
