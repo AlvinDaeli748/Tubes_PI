@@ -42,7 +42,8 @@
 
       <label for="kelulusan" id="kelulusan-label">
         Tahun kelulusan
-        <select id="date-dropdown">
+        <select id="date-dropdown" required>
+          <option value="" selected data-default> Select Year  </option>
 
         </select>
           <script>
@@ -53,6 +54,7 @@
 
             while (currentYear >= earliestYear) {
               let dateOption = document.createElement('option');
+              dateOption.placeholder = "Select Year";
               dateOption.text = currentYear;
               dateOption.value = currentYear;
               dateDropdown.add(dateOption);
