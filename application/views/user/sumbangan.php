@@ -42,7 +42,7 @@
 
       <label for="kelulusan" id="kelulusan-label">
         Tahun kelulusan
-        <select id="date-dropdown" required>
+        <select name="kelulusan" id="date-dropdown" required>
           <option value="" selected data-default> Select Year  </option>
 
         </select>
@@ -72,7 +72,7 @@
 
       <label for="Keterangan_sumbangan" id="sumbangan-label">
         Keterangan Sumbangan?
-        <textarea name="keterangan_sumbangan" id="Keterangan_sumbangan" cols="30" rows="10"></textarea>
+        <textarea name="keterangan_sumbangan" id="Keterangan_sumbangan" cols="30" rows="10" required></textarea>
       </label>
 
       <div class="submit"><input type="submit" value="Submit"></div>
@@ -80,8 +80,6 @@
 	</form>
     <br><br>
        </div>
-       <div id="footer">
-        <p>&copy; Copyright kelompok 7 PI kom C</p>
-       </div>
+       <?php include 'footer.php' ?>
 </body>
 </html>

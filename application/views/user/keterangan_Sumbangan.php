@@ -37,7 +37,7 @@
         Tanggal memberikan sumbangan?
         </label>
         <input type="date" /><br><br>
-      
+
 
       <label for="nama_petugas" id="name-label">
         Nama Petugas yang Menerima ?
@@ -53,8 +53,6 @@
     </form>
     <br><br>
        </div>
-       <div id="footer">
-        <p>&copy; Copyright kelompok 7 PI kom C</p>
-       </div>
+       <?php include 'footer.php' ?>
 </body>
 </html>
