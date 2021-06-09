@@ -14,7 +14,7 @@ class Admin extends CI_Controller {
 
 	public function checkDB($pass){
 		$uname = $this->input->post('uname');
-		$result = $this->uModel->login($uname, $pass);
+		$result = $this->User_Model->login($uname, $pass);
 		if ($result) {
 			$session = array();
 			foreach ($result as $value) {

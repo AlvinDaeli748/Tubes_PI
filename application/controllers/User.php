@@ -5,7 +5,7 @@ class User extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();		
-		$this->load->model('uModel');
+		$this->load->model('User_Model');
 	}
 
 	public function index()
@@ -20,7 +20,7 @@ class User extends CI_Controller {
 	public function tambah_sumbangan() {
 		echo $this->session->flashdata('notif');
 		var_dump($this->session->flashdata('data'));
-		$this->load->view('user/sumbangan', $this->session->flashdata('data'));
+		$this->load->view('User/sumbangan', $this->session->flashdata('data'));
 	}
 
 	public function tambah_sumbangan_act() {
@@ -40,13 +40,13 @@ class User extends CI_Controller {
 			'keterangan_sumbangan' => $keterangan_sumbangan
         );
 
-        $this->uModel->input_sumbangan('sumbangan', $data);
+        $this->User_Model->input_sumbangan('sumbangan', $data);
 
 		// redirect(base_url().'user/sumbangan');
     }
 
 	public function home() {
-		$this->load->view('user/home');
+		$this->load->view('User/home');
 	}
 
 }
