@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class User extends CI_Controller {
 
 	function __construct(){
-		parent::__construct();		
+		parent::__construct();
 		$this->load->model('uModel');
 	}
 
@@ -12,9 +12,13 @@ class User extends CI_Controller {
 	{
 		$this->load->view('User/home');
 	}
-		
+
 	public function sumbangan(){
 		$this->load->view('User/sumbangan');
+	}
+
+	public function contact(){
+		$this->load->view('User/contact');
 	}
 
 	public function tambah_sumbangan() {
@@ -43,7 +47,7 @@ class User extends CI_Controller {
         $this->uModel->input_sumbangan('sumbangan', $data);
     }
 
-	
+
 
 
 }
