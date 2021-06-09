@@ -3,12 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
 
+	function __construct(){
+		parent::__construct();
+		if($this->Login_Model->isNotLogin()) redirect(site_url('Login'));		
+	}
+
 	public function index()
 	{
-		$this->load->view('admin/login');
+		$this->load->view('admin/dashboard');
 	}
 
 	public function dashboard(){
+		// $data = var_dump($this->session->userdata);
 		$this->load->view('admin/dashboard');
 	}
 
@@ -16,12 +22,8 @@ class Admin extends CI_Controller {
 		$uname = $this->input->post('uname');
 		$result = $this->User_Model->login($uname, $pass);
 		if ($result) {
-			$session = array();
 			foreach ($result as $value) {
-				$session = array(
-					'uname' 	=> $value->uname,
-					'nama' 	=> $value->nama
-				);
+				$session = $value->uname;
 				$this->session->set_userdata('logged_in', $session);
 			}
 			return true;

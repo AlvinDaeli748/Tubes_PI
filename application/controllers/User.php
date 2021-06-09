@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class User extends CI_Controller {
 
 	function __construct(){
-		parent::__construct();		
-		$this->load->model('User_Model');
+		parent::__construct();
+		if($this->Login_Model->isNotLogin()) redirect(site_url('Login'));		
 	}
 
 	public function index()
