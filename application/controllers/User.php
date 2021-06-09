@@ -10,17 +10,17 @@ class User extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('User/home');
+		$this->load->view('user/home');
 	}
 		
 	public function sumbangan(){
-		$this->load->view('User/sumbangan');
+		$this->load->view('user/sumbangan');
 	}
 
 	public function tambah_sumbangan() {
 		echo $this->session->flashdata('notif');
 		var_dump($this->session->flashdata('data'));
-		$this->load->view('User/sumbangan', $this->session->flashdata('data'));
+		$this->load->view('user/sumbangan', $this->session->flashdata('data'));
 	}
 
 	public function tambah_sumbangan_act() {
@@ -46,7 +46,7 @@ class User extends CI_Controller {
     }
 
 	public function home() {
-		$this->load->view('User/home');
+		$this->load->view('user/home');
 	}
 
 }

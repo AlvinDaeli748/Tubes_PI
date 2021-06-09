@@ -79,7 +79,7 @@
     <br><br>
        </div>
        <div id="footer">
-        <p>&copy; Copyright kelompok 7 PI kom C</p>
+        <p>&copy; Copyright Kelompok 7 PI Kom C</p>
        </div>
 </body>
 </html>

@@ -9,7 +9,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function dashboard(){
-		$this->load->view('admin/admin');
+		$this->load->view('admin/dashboard');
 	}
 
 	public function checkDB($pass){
