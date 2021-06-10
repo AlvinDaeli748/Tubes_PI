@@ -25,44 +25,4 @@ class User extends CI_Controller
 		$this->load->view('user/profile', $data);
 		$this->load->view('templates/user_footer');
 	}
-
-	public function sumbangan()
-	{
-		$this->load->view('user/sumbangan');
-	}
-
-	public function tambah_sumbangan()
-	{
-		echo $this->session->flashdata('notif');
-		var_dump($this->session->flashdata('data'));
-		$this->load->view('user/sumbangan', $this->session->flashdata('data'));
-	}
-
-	public function tambah_sumbangan_act()
-	{
-		$nama = $this->input->post('nama');
-		$email = $this->input->post('email');
-		$sifat = $this->input->post('sifat');
-		$kelulusan = $this->input->post('kelulusan');
-		$sumbangan = $this->input->post('sumbangan');
-		$keterangan_sumbangan = $this->input->post('keterangan_sumbangan');
-
-		$data = array(
-			'nama' => $nama,
-			'email' => $email,
-			'sifat' => $sifat,
-			'kelulusan' => $kelulusan,
-			'sumbangan' => $sumbangan,
-			'keterangan_sumbangan' => $keterangan_sumbangan
-		);
-
-		$this->User_Model->input_sumbangan('sumbangan', $data);
-
-		// redirect(base_url().'user/sumbangan');
-	}
-
-	public function home()
-	{
-		$this->load->view('user/home');
-	}
 }
