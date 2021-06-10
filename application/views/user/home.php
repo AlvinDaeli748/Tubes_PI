@@ -11,7 +11,7 @@
             <img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" width="40px" height="40px" alt="">
             <div>
                 <h4><?= $user['name']; ?></h4>
-                <small>member</small>
+                <small><?= $user['role_id']; ?></small>
             </div>
         </div>
     </header>
