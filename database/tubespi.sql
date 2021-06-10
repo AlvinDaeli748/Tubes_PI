@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Jun 2021 pada 20.11
+-- Waktu pembuatan: 10 Jun 2021 pada 21.15
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -156,7 +156,7 @@ INSERT INTO `user_menu` (`id`, `menu`) VALUES
 (3, 'User'),
 (4, 'Menu'),
 (5, 'test'),
-(6, 'tes1');
+(7, 'coba');
 
 -- --------------------------------------------------------
 
@@ -203,7 +203,9 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (3, 2, 'Edit Profile', 'petugas/edit', 'las la-user-edit', 1),
 (5, 1, 'Petugas', 'admin/petugas', 'las la-users', 1),
 (6, 2, 'Sumbangan', 'admin/sumbangan', 'las la-receipt', 1),
-(8, 4, 'Menu Management', 'menu', 'las la-ellipsis-h', 1);
+(8, 4, 'Menu Management', 'menu', 'las la-ellipsis-h', 1),
+(9, 4, 'Submenu Management', 'menu/submenu', 'las la-folder-open', 1),
+(10, 1, 'coba', 'coba/cobac', 'las la-clipboard-list', 1);
 
 --
 -- Indexes for dumped tables
@@ -295,7 +297,7 @@ ALTER TABLE `user_access_menu`
 -- AUTO_INCREMENT untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_role`
@@ -307,7 +309,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
