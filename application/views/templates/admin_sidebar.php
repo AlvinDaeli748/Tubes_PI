@@ -17,7 +17,7 @@
 
 
     <div class="sidebar-brand">
-        <h2><span class="lab la-accusoft"></span><span>Admin Page</span></h2>
+        <h2><span class="lab la-accusoft"></span><span>Sedekah</span></h2>
     </div>
 
 
