@@ -26,13 +26,19 @@ class User extends CI_Controller
 		$this->load->view('templates/user_footer');
 	}
 
-	public function sumbangan()
-	{
-		$this->load->view('user/sumbangan');
+	public function sumbangan(){
+		$this->load->view('User/sumbangan');
 	}
 
-	public function tambah_sumbangan()
-	{
+	public function contact(){
+		$this->load->view('User/contact');
+	}
+
+	public function about(){
+		$this->load->view('User/about');
+	}
+
+	public function tambah_sumbangan() {
 		echo $this->session->flashdata('notif');
 		var_dump($this->session->flashdata('data'));
 		$this->load->view('user/sumbangan', $this->session->flashdata('data'));
