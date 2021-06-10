@@ -21,6 +21,10 @@ class User extends CI_Controller {
 		$this->load->view('User/contact');
 	}
 
+	public function about(){
+		$this->load->view('User/about');
+	}
+
 	public function tambah_sumbangan() {
 		echo $this->session->flashdata('notif');
 		var_dump($this->session->flashdata('data'));
