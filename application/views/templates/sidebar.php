@@ -47,7 +47,7 @@
                 <?php endforeach; ?>
 
                 <li>
-                    <a class="nav-link pb-0" href="<?= base_url('auth/logout'); ?>"><span class="las la-sign-out-alt"></span>
+                    <a class="nav-link pb-0" href="<?= base_url('Auth/logout'); ?>"><span class="las la-sign-out-alt"></span>
                         <span>Logout</span></a>
                 </li>
         </ul>

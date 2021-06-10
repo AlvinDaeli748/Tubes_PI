@@ -3,15 +3,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Petugas extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        is_logged_in();
+    }
+
     public function index()
     {
-        $data['title'] = 'User Page';
+        $data['title'] = 'Dashboard';
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
-        $this->load->view('templates/admin_header', $data);
-        $this->load->view('templates/admin_sidebar', $data);
-        $this->load->view('petugas/profile', $data);
-        $this->load->view('templates/admin_footer');
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('petugas/dashboard', $data);
+        $this->load->view('templates/footer');
     }
 
     public function profile()
@@ -19,9 +25,9 @@ class Petugas extends CI_Controller
         $data['title'] = 'User Page';
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
-        $this->load->view('templates/admin_header', $data);
-        $this->load->view('templates/admin_sidebar', $data);
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
         $this->load->view('petugas/profile', $data);
-        $this->load->view('templates/admin_footer');
+        $this->load->view('templates/footer');
     }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Jun 2021 pada 22.46
+-- Waktu pembuatan: 11 Jun 2021 pada 01.06
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -136,7 +136,8 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (4, 1, 4),
 (5, 3, 3),
 (6, 2, 3),
-(7, 3, 5);
+(7, 3, 5),
+(8, 2, 6);
 
 -- --------------------------------------------------------
 
@@ -158,7 +159,8 @@ INSERT INTO `user_menu` (`id`, `menu`) VALUES
 (2, 'Petugas'),
 (3, 'User'),
 (4, 'Menu'),
-(5, 'khusus user');
+(5, 'khusus user'),
+(6, 'Khusus Petugas');
 
 -- --------------------------------------------------------
 
@@ -200,14 +202,16 @@ CREATE TABLE `user_sub_menu` (
 --
 
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active`) VALUES
-(1, 1, 'Dashboard', 'admin', 'las la-igloo', 1),
-(2, 3, 'My Profile', 'petugas', 'las la-user', 1),
-(3, 3, 'Edit Profile', 'petugas/edit', 'las la-user-edit', 1),
+(1, 2, 'Dashboard', 'petugas', 'las la-igloo', 1),
+(2, 6, 'My Profile', 'petugas', 'las la-user', 1),
+(3, 6, 'Edit Profile', 'petugas/edit', 'las la-user-edit', 1),
 (5, 1, 'Petugas', 'admin/petugas', 'las la-users', 1),
 (8, 4, 'Menu Management', 'menu', 'las la-ellipsis-h', 1),
 (9, 4, 'Submenu Management', 'menu/submenu', 'las la-folder-open', 1),
 (11, 2, 'List Sumbangan', 'admin/list_sumbangan', 'las la-receipt', 1),
-(12, 5, 'Sumbangan', 'user/sumbangan', 'las la-donate', 1);
+(12, 5, 'Sumbangan', 'user/sumbangan', 'las la-donate', 1),
+(13, 5, 'Home', 'user', 'las la-igloo', 1),
+(14, 5, 'My Profile', 'user/profile', 'las la-user', 1);
 
 --
 -- Indexes for dumped tables
@@ -293,13 +297,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_role`
@@ -311,7 +315,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
