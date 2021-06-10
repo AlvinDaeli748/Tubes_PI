@@ -1,67 +1,79 @@
 body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	height: 600px;
+	background-color: #3646d8;
+	align-items: center;
 	font-family: sans-serif;
-    background-color: #bdd4e7;
-    background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
-    
-    
 }
- 
-h1{
-	text-align: center;
-	/*ketebalan font*/
-	font-weight: 300;
-}
- 
-.tulisan_login{
-	text-align: center;
-	/*membuat semua huruf menjadi kapital*/
-	text-transform: uppercase;
-}
- 
-.kotak_login{
+
+.login{
+	background-color: #fff;
 	width: 350px;
-	/*meletakkan form ke tengah*/
-	margin: 80px auto;
-	padding: 30px 20px;
-    background: rgba( 229, 231, 229, 0.30 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 12.5px );
-    -webkit-backdrop-filter: blur( 12.5px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-}
- 
-label{
-	font-size: 11pt;
-}
- 
-.form_login{
-	/*membuat lebar form penuh*/
-	box-sizing : border-box;
-	width: 100%;
-	padding: 10px;
-	font-size: 11pt;
-	margin-bottom: 20px;
-
-}
- 
-.tombol_login{
-	background: #707070;
-	color: white;
-	font-size: 11pt;
-	width: 100%;
-	border: none;
-	border-radius: 3px;
-	padding: 10px 20px;
+	text-align: center;
+	padding: 40px;
+	box-sizing: border-box;
+	border-radius: 10px;
 }
 
-.back{
-    background: #707070;
-	color: white;
-	font-size: 11pt;
-	width: 30%;
+.login h2{
+	margin: 0 0 20px; 
+	width: 100%;
+	margin-bottom: 25px;
+}
+
+.login .input-group{
+	position: relative;
+	width: 100%;
+	margin-bottom: 25px;
+}
+
+.login .input-group input{
+	height: 50px;
+	width: 100%;
+	padding: 0 20px;
+	box-sizing: border-box;
+	font-size: 18px;
+	border: 3px solid black;
+	border-radius: 10px;
+}
+
+.login .input-group span{
+	position: absolute;
+	top: 12px;
+	left: 20px;
+	padding: 0px;
+	text-transform: capitalize;
+	background-color: #fff;
+	
+}
+
+.login .input-group input:focus ~ span,
+.login .input-group input:valid ~ span{
+	top: -12px;
+	left: 20px;
+	font-size: 12px;
+	background-color: #d4d4d8;
+	padding: 2px 4px;
+	border: 1px solid #000;
+	border-radius: 5px;
+
+}
+
+.login .input-group input[type="submit"]{
+	background-color: #3646d8;
 	border: none;
-	border-radius: 3px;
-	padding: 10px 20px;
-    margin: 10px auto;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+	width: 35%;
+	transition: 0.5s;
+}
+
+.login .input-group input[type="submit"]:hover{
+	width: 100%;
+	background-color: #3646d8;
+	color: #fff;
 }

@@ -1,52 +1,68 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class User extends CI_Controller {
-
-	function __construct(){
-		parent::__construct();
-		if($this->Login_Model->isNotLogin()) redirect(site_url('Login'));		
-	}
+class User extends CI_Controller
+{
 
 	public function index()
 	{
-		$this->load->view('user/home');
+		$data['title'] = 'User Page';
+		$data['user'] = $this->db->get_where('user', ['email' =>
+		$this->session->userdata('email')])->row_array();
+		$this->load->view('templates/user_header', $data);
+		$this->load->view('templates/user_sidebar', $data);
+		$this->load->view('user/home', $data);
+		$this->load->view('templates/user_footer');
 	}
-		
-	public function sumbangan(){
+
+	public function profile()
+	{
+		$data['title'] = 'User Page';
+		$data['user'] = $this->db->get_where('user', ['email' =>
+		$this->session->userdata('email')])->row_array();
+		$this->load->view('templates/user_header', $data);
+		$this->load->view('templates/user_sidebar', $data);
+		$this->load->view('user/profile', $data);
+		$this->load->view('templates/user_footer');
+	}
+
+	public function sumbangan()
+	{
 		$this->load->view('user/sumbangan');
 	}
 
-	public function tambah_sumbangan() {
+	public function tambah_sumbangan()
+	{
 		echo $this->session->flashdata('notif');
 		var_dump($this->session->flashdata('data'));
 		$this->load->view('user/sumbangan', $this->session->flashdata('data'));
 	}
 
-	public function tambah_sumbangan_act() {
-        $nama = $this->input->post('nama');
-        $email = $this->input->post('email');
-        $sifat = $this->input->post('sifat');
-        $kelulusan = $this->input->post('kelulusan');
-        $sumbangan = $this->input->post('sumbangan');
+	public function tambah_sumbangan_act()
+	{
+		$nama = $this->input->post('nama');
+		$email = $this->input->post('email');
+		$sifat = $this->input->post('sifat');
+		$kelulusan = $this->input->post('kelulusan');
+		$sumbangan = $this->input->post('sumbangan');
 		$keterangan_sumbangan = $this->input->post('keterangan_sumbangan');
 
-        $data = array(
-            'nama' => $nama,
-            'email' => $email,
-            'sifat' => $sifat,
-            'kelulusan' => $kelulusan,
-            'sumbangan' => $sumbangan,
+		$data = array(
+			'nama' => $nama,
+			'email' => $email,
+			'sifat' => $sifat,
+			'kelulusan' => $kelulusan,
+			'sumbangan' => $sumbangan,
 			'keterangan_sumbangan' => $keterangan_sumbangan
-        );
+		);
 
-        $this->User_Model->input_sumbangan('sumbangan', $data);
+		$this->User_Model->input_sumbangan('sumbangan', $data);
 
 		// redirect(base_url().'user/sumbangan');
-    }
-
-	public function home() {
-		$this->load->view('user/home');
 	}
 
+	public function home()
+	{
+		$this->load->view('user/home');
+	}
 }
