@@ -37,8 +37,8 @@
 
       <label for="sifat" id="sifat-label"> Sumbangan bersifat? </label>
 
-      <input type="radio" name="sifat" value="1" checked /> Pribadi <br />
-      <input type="radio" name="sifat" value="2" /> Angkatan <br /> <br>
+      <input type="radio" name="sifat" value="Pribadi" checked /> Pribadi <br />
+      <input type="radio" name="sifat" value="Angkatan" /> Angkatan <br /> <br>
 
       <label for="kelulusan" id="kelulusan-label">
         Tahun kelulusan
@@ -67,8 +67,8 @@
       <label for="sumbangan" id="sumbangan-label">
         Apa yang ingin disumbangkan?
       </label>
-      <input type="radio" name="sumbangan" value="1" checked /> Barang <br />
-      <input type="radio" name="sumbangan" value="2" /> Uang <br /> <br>
+      <input type="radio" name="sumbangan" value="Barang" checked /> Barang <br />
+      <input type="radio" name="sumbangan" value="Uang" /> Uang <br /> <br>
 
       <label for="Keterangan_sumbangan" id="sumbangan-label">
         Keterangan Sumbangan?

@@ -65,6 +65,7 @@ class Admin extends CI_Controller
 	public function list_petugas() {
 		$data['user'] = $this->Admin_Model->tampil_petugas();
 		$this->load->view('admin/list_petugas', $data);
+	}
 
 	public function changeAccess()
 	{
