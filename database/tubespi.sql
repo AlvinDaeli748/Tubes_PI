@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jun 2021 pada 02.53
+-- Waktu pembuatan: 11 Jun 2021 pada 04.04
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -82,7 +82,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
 (1, 'Willi Nardo', 'nardowilli@gmail.com', 'default.jpg', '$2y$10$xtx3PlczoiYapQ4n3d9WF.fUYG0iG/Ee4UrjYjmMg07yjV/0q3YIO', 1, 1, 1623272391),
-(2, 'alvin', 'alvin@gmail.com', 'default.jpg', '$2y$10$HGig2YfGTxTY4lm5MxXPIek.4kTRUNW04X1YwyoeTyOu26o2d7iUq', 3, 1, 1623272824),
+(2, 'alvin daeli', 'alvin@gmail.com', '1.png', '$2y$10$aX0/NLoDeb0mcfutb8FnCem8g6Iax0E6qcM5FWR5HuVCZbxAg.j1.', 3, 1, 1623272824),
 (3, 'Tiara Amalia', 'tiara@gmail.com', 'default.jpg', '$2y$10$rUiKN.pJpOjsKfVu3izwiOTZjIq41oiURZJmyv9SZoj0Kzu.nAtAe', 2, 1, 1623314758),
 (4, 'timothy', 'timo@gmail.com', 'default.jpg', '$2y$10$f0KsSEzgu1KilGANwK59DeGWtgWYYqg93.Z9Ub.azlo2ZuWa8oMJO', 3, 1, 1623354506);
 
@@ -213,7 +213,9 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (12, 5, 'Sumbangan', 'user/sumbangan', 'las la-donate', 1),
 (13, 5, 'Home', 'user', 'las la-igloo', 1),
 (14, 10, 'My Profile', 'user/profile', 'las la-user', 1),
-(15, 1, 'Role', 'admin/role', 'las la-user-tie', 1);
+(15, 1, 'Role', 'admin/role', 'las la-user-tie', 1),
+(16, 10, 'Edit Profile', 'user/edit', 'las la-user-tie', 1),
+(17, 10, 'Change Password', 'user/changepassword', 'las la-key', 1);
 
 --
 -- Indexes for dumped tables
@@ -317,7 +319,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
