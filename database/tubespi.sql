@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jun 2021 pada 18.54
+-- Waktu pembuatan: 11 Jun 2021 pada 21.40
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -85,7 +85,7 @@ INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_a
 (2, 'alvin daeli', 'alvin@gmail.com', '1.png', '$2y$10$aX0/NLoDeb0mcfutb8FnCem8g6Iax0E6qcM5FWR5HuVCZbxAg.j1.', 3, 1, 1623272824),
 (3, 'Tiara Amalia', 'tiara@gmail.com', 'default.jpg', '$2y$10$rUiKN.pJpOjsKfVu3izwiOTZjIq41oiURZJmyv9SZoj0Kzu.nAtAe', 2, 1, 1623314758),
 (4, 'timothy', 'timo@gmail.com', 'default.jpg', '$2y$10$f0KsSEzgu1KilGANwK59DeGWtgWYYqg93.Z9Ub.azlo2ZuWa8oMJO', 3, 1, 1623354506),
-(7, 'wind', 'nardowilli@gmail.com', 'default.jpg', '$2y$10$fd18zR3YcTpZYUq1FW5xm.ZSP3/E3tE0xS7bfq8odjHNS8Sh/GV3S', 3, 1, 1623384081);
+(8, 'ruth', 'ruth@gmail.com', 'default.jpg', '$2y$10$pftlJYX8ve/GMQtCI09uGeHrgPrxSkU1FjssQRt9VyW/VZIDfpwBC', 2, 1, 1623434448);
 
 -- --------------------------------------------------------
 
@@ -310,7 +310,7 @@ ALTER TABLE `sumbangan`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
@@ -328,7 +328,7 @@ ALTER TABLE `user_access_menu`
 -- AUTO_INCREMENT untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_role`
@@ -340,7 +340,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_token`

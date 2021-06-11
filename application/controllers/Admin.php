@@ -88,32 +88,53 @@ class Admin extends CI_Controller
 		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Access Changed!</div>');
 	}
 
-	public function tambah_petugas() {
-		$this->load->view('admin/tambah_petugas');
+	public function petugas()
+	{
+		$data['title'] = 'List Petugas';
+		$data['user'] = $this->db->get_where('user', ['email' =>
+		$this->session->userdata('email')])->row_array();
+
+		$data['petugas'] = $this->db->get_where('user', ['role_id' => '2'])->result_array();
+
+		$this->form_validation->set_rules('name', 'Name', 'required|trim');
+		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
+			'is_unique' => 'this email has alredy registered'
+		]);
+		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', [
+			'matches' => 'password dont match!',
+			'min_length' => 'Password minimal 3 huruf'
+		]);
+		$this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
+
+		if ($this->form_validation->run() == false) {
+			$data['title'] = 'Tambah Petugas';
+			$this->load->view('templates/header', $data);
+			$this->load->view('templates/sidebar', $data);
+			$this->load->view('admin/petugas', $data);
+			$this->load->view('templates/footer');
+		} else {
+			$email = $this->input->post('email', true);
+			$data = [
+				'name' => htmlspecialchars($this->input->post('name', true)),
+				'email' => htmlspecialchars($this->input->post('email', true)),
+				'image' => 'default.jpg',
+				'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
+				'role_id' => 2,
+				'is_active' => 1,
+				'date_created' => time()
+			];
+
+			$this->db->insert('user', $data);
+			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Congratulation! a account has been created.</div>');
+			redirect('admin/petugas');
+		}
 	}
 
-	public function tambah_petugas_act() {
-		$nama = $this->input->post('nama');
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
-        $no_hp = $this->input->post('no_hp');
-
-		$data = array(
-            'nama' => $nama,
-            'username' => $username,
-            'password' => $password,
-            'no_hp' => $no_hp,
-        );
-
-        $this->Admin_Model->tambah_petugas('user', $data);
-
-		redirect(base_url().'Admin/list_petugas');
+	public function hapuspetugas($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete('user');
+		$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">a account has been deleted</div>');
+		redirect('admin/petugas');
 	}
-
-	public function hapus_petugas($id) {
-		$where = array('id' => $id);
-		$this->Admin_Model->hapus_petugas($where, 'user');
-		redirect('admin/list_petugas');
-	}
-
 }

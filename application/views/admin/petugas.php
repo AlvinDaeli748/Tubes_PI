@@ -1,304 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <title>Document</title>
-    <link rel="stylesheet" href="<?php echo base_url('assets/admin_style.css'); ?>"/>
-</head>
-<body>
+<div class="main-content">
+    <header>
+        <h2>
+            <label for="nav-toggle">
+                <span class="las la-bars"></span>
+            </label>
 
-    <input type="checkbox" id="nav-toggle">
-    <div class="sidebar">
-        <div class="sidebar-brand">
-            <h2><span class="lab la-accusoft"></span><span>Petugas</span></h2>
+            <?= $title; ?>
+        </h2>
+
+
+        <div class="user-wrapper">
+            <img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" width="40px" height="40px" alt="">
+            <div>
+                <h4><?= $user['name']; ?></h4>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="table-responsive">
+            <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>') ?>
+            <div class="card-body">
+                <?= $this->session->flashdata('message'); ?>
+
+                <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newPetugasmodal">Add New Petugas</a>
+
+                <table width="100%">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $i = 1; ?>
+                        <?php foreach ($petugas as $p) : ?>
+                            <tr>
+                                <th scope="row"><?= $i; ?></th>
+                                <td><?= $p['name']; ?></td>
+                                <td><?= $p['email']; ?></td>
+                                <td>
+                                    <a href="<?= base_url(); ?>admin/hapuspetugas/<?= $p['id']; ?>" class="badge badge-danger">delete</a>
+                                </td>
+                            </tr>
+                            <?php $i++; ?>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+
+            </div>
         </div>
 
-        <div class="sidebar-menu">
-            <ul>
-                <li>
-                    <a href="<?php echo base_url('Admin/dashboard'); ?>"><span class="las la-igloo"></span>
-                        <span>Dashboard</span></a>
-                </li>
-                <li>
-                    <a href="" class="active"><span class="las la-users"></span>
-                        <span>Petugas</span></a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('Admin/petugas');?>"><span class="las la-user-tie"></span>
-                        <span>Tambah Petugas</span></a>
-                </li>
-                <li>
-                    <a href=""><span class="las la-receipt"></span>
-                        <span>Sumbangan</span></a>
-                </li>
-                <li>
-                    <a href=""><span class="las la-clipboard-list"></span>
-                        <span>Tasks</span></a>
-                </li>
-            </ul>
+    </main>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="newPetugasmodal" tabindex="-1" role="dialog" aria-labelledby="newPetugasmodalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newPetugasmodalLabel">Add New Petugas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" action="<?= base_url('admin/petugas'); ?>" width="50%">
+                <div class="form-group">
+                    <label for="exampleInputUsername">Nama Lengkap</label>
+                    <input type="text" class="form-control form-control-user" id="name" name="name" placeholder="Full name" value="<?= set_value('name'); ?>">
+                    <?= form_error('name', '<small class="text-danger pl-3">', '</small>'); ?>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Email Address" value="<?= set_value('email'); ?>">
+                    <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword">Password</label>
+                    <input type="password" class="form-control form-control-user" id="password1" name="password1" placeholder="Password">
+                    <?= form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword">Re-enter Password</label>
+                    <input type="password" class="form-control form-control-user" id="password2" name="password2" placeholder="Repeat Password">
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
         </div>
     </div>
-
-    <div class="main-content">
-        <header>
-            <h2>
-                <label for="nav-toggle">
-                    <span class="las la-bars"></span>
-                </label>
-
-                Dashboard
-            </h2>
-
-            <div class="search-wrapper">
-                <span class="las la-search"></span>
-                <input type="search" placeholder="Search here"/>
-            </div>
-
-            <div class="user-wrapper">
-                <img src="1.png" width="40px" height="40px" alt="">
-                <div>
-                    <h4>Willi Nardo</h4>
-                    <small>Petugas</small>
-                </div>
-            </div>
-        </header>
-        <main>
-            <div class="cards">
-                <div class="card-single">
-                    <div>
-                        <h1>5</h1>
-                        <span>Petugas</span>
-                    </div>
-                    <div>
-                        <span class="las la-users"></span>
-                    </div>
-                </div>
-
-
-                <div class="card-single">
-                    <div>
-                        <h1>124</h1>
-                        <span>Sumbangan</span>
-                    </div>
-                    <div>
-                        <span class="las la-receipt"></span>
-                    </div>
-                </div>
-
-                
-                <div class="card-single">
-                    <div>
-                        <h1>10</h1>
-                        <span>Tasks</span>
-                    </div>
-                    <div>
-                        <span class="las la-clipboard-list"></span>
-                    </div>
-                </div>
-
-                
-            </div>
-
-            <div class="recent-grid">
-                <div class="projects">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Sumbangan</h3>
-
-                            <button>See all <span class="las la-arrow-right">   
-                            </span></button>
-                        </div>
-                    
-
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table width="100%">
-                                    <thread>
-                                        <tr>
-                                            <td>Nama</td>
-                                            <td>Sifat Sumbangan</td>
-                                            <td>Status</td>
-                                            <td>Action</td>
-                                        </tr>
-                                    </thread>
-                                    <tbody>
-                                        <tr>
-                                            <td>Willi Nardo</td>
-                                            <td>Pribadi</td>
-                                            <td><span class="status purple"></span>
-                                                review
-                                            </td>
-                                            <td><button>Detail<span class="las la-arrow-right"></span></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Alvin Daeli</td>
-                                            <td>Angkatan</td>
-                                            <td><span class="status pink"></span>
-                                                in progress
-                                            </td>
-                                            <td><button>Detail<span class="las la-arrow-right"></span></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tiara Amalia</td>
-                                            <td>Angkatan</td>
-                                            <td><span class="status orange"></span>
-                                                pending
-                                            </td>
-                                            <td><button>Detail<span class="las la-arrow-right"></span></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Timothy</td>
-                                            <td>Pribadi</td>
-                                            <td><span class="status purple"></span>
-                                                review
-                                            </td>
-                                            <td><button>Detail<span class="las la-arrow-right"></span></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ruth Calista</td>
-                                            <td>Pribadi</td>
-                                            <td><span class="status pink"></span>
-                                                in progress
-                                            </td>
-                                            <td><button>Detail<span class="las la-arrow-right"></span></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tiara Amalia</td>
-                                            <td>Angkatan</td>
-                                            <td><span class="status orange"></span>
-                                                pending
-                                            </td>
-                                            <td><button>Detail<span class="las la-arrow-right"></span></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Willi Nardo</td>
-                                            <td>Pribadi</td>
-                                            <td><span class="status purple"></span>
-                                                review
-                                            </td>
-                                            <td><button>Detail<span class="las la-arrow-right"></span></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Alvin Daeli</td>
-                                            <td>Pribadi</td>
-                                            <td><span class="status pink"></span>
-                                                in progress
-                                            </td>
-                                            <td><button>Detail<span class="las la-arrow-right"></span></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tiara Amalia</td>
-                                            <td>Angkatan</td>
-                                            <td><span class="status orange"></span>
-                                                pending
-                                            </td>
-                                            <td><button>Detail<span class="las la-arrow-right"></span></button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    
-                        <div class="customers">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3>Petugas</h3>
-
-                                    <button>See all <span class="las la-arrow-right">   
-                                    </span></button>
-                                </div>
-
-                                <div class="card-body">
-                                    <div class="customer">
-                                        <div class="info">
-                                            <img src="1.png" width="40px" height="40px" alt="">
-                                            <div>
-                                                <h4>Tiara Amalia</h4>
-                                                <small>Gusti Kanjeng Ratu</small>
-                                            </div>
-                                        </div>
-                                        <div class="contact">
-                                            <span class="las la-user-circle"></span>
-                                            <span class="las la-comment"></span>
-                                            <span class="las la-phone"></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="customer">
-                                        <div class="info">
-                                            <img src="1.png" width="40px" height="40px" alt="">
-                                            <div>
-                                                <h4>Willi Nardo</h4>
-                                                <small>Frontend</small>
-                                            </div>
-                                        </div>
-                                        <div class="contact">
-                                            <span class="las la-user-circle"></span>
-                                            <span class="las la-comment"></span>
-                                            <span class="las la-phone"></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="customer">
-                                        <div class="info">
-                                            <img src="1.png" width="40px" height="40px" alt="">
-                                            <div>
-                                                <h4>Alvin Daeli</h4>
-                                                <small>Backend</small>
-                                            </div>
-                                        </div>
-                                        <div class="contact">
-                                            <span class="las la-user-circle"></span>
-                                            <span class="las la-comment"></span>
-                                            <span class="las la-phone"></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="customer">
-                                        <div class="info">
-                                            <img src="1.png" width="40px" height="40px" alt="">
-                                            <div>
-                                                <h4>Timothy Sebastian</h4>
-                                                <small>Fullstack</small>
-                                            </div>
-                                        </div>
-                                        <div class="contact">
-                                            <span class="las la-user-circle"></span>
-                                            <span class="las la-comment"></span>
-                                            <span class="las la-phone"></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="customer">
-                                        <div class="info">
-                                            <img src="1.png" width="40px" height="40px" alt="">
-                                            <div>
-                                                <h4>Ruth Calista</h4>
-                                                <small>Fullstack</small>
-                                            </div>
-                                        </div>
-                                        <div class="contact">
-                                            <span class="las la-user-circle"></span>
-                                            <span class="las la-comment"></span>
-                                            <span class="las la-phone"></span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                        
-                            </div>
-                    
-                        </div>
-            
-            </div>
-
-        </main>
-    </div>
-</body>
-</html>
+</div>
