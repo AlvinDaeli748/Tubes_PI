@@ -10,13 +10,16 @@ class Auth extends CI_Controller
     }
     public function index()
     {
+        if ($this->session->userdata('email')) {
+            redirect('user/profile');
+        }
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'password', 'trim|required');
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Login Page';
-            $this->load->view('templates/auth_header', $data);
+            $this->load->view('templates/auth_login_header', $data);
             $this->load->view('auth/login');
-            $this->load->view('templates/auth_footer');
+            $this->load->view('templates/auth_login_footer');
         } else {
             //validasinya sukses
             $this->_login();
@@ -45,7 +48,7 @@ class Auth extends CI_Controller
                         redirect('admin');
                     } else if ($user['role_id'] == 2) {
                         redirect('petugas');
-                    } else {
+                    } else if ($user['role_id'] == 3) {
                         redirect('user');
                     }
                 } else {
@@ -64,6 +67,9 @@ class Auth extends CI_Controller
 
     public function registration()
     {
+        if ($this->session->userdata('email')) {
+            redirect('user/profile');
+        }
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
             'is_unique' => 'this email has alredy registered'
@@ -76,9 +82,9 @@ class Auth extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Register Page';
-            $this->load->view('templates/auth_header', $data);
+            $this->load->view('templates/auth_regis_header', $data);
             $this->load->view('auth/registration');
-            $this->load->view('templates/auth_footer');
+            $this->load->view('templates/auth_regis_footer');
         } else {
             $email = $this->input->post('email', true);
             $data = [
@@ -104,5 +110,10 @@ class Auth extends CI_Controller
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">you have been logged out!</div>');
         redirect('auth');
+    }
+
+    public function blocked()
+    {
+        $this->load->view('auth/blocked');
     }
 }

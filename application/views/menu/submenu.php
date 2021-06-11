@@ -13,7 +13,6 @@
             <img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" width="40px" height="40px" alt="">
             <div>
                 <h4><?= $user['name']; ?></h4>
-                <small><?= $user['role_id']; ?></small>
             </div>
         </div>
     </header>
@@ -51,8 +50,8 @@
                             <td><?= $sm['icon']; ?></td>
                             <td><?= $sm['is_active']; ?></td>
                             <td>
-                                <a href="" class="badge rounded-pill bg-success">edit</a>
-                                <a href="" class="badge rounded-pill bg-danger">delete</a>
+                                <a href="" class="badge badge-success">edit</a>
+                                <a href="" class="badge badge-danger">delete</a>
                             </td>
                         </tr>
                         <?php $i++; ?>
