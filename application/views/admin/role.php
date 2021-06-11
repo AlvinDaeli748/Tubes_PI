@@ -22,7 +22,7 @@
             <div class="card-body">
                 <?= $this->session->flashdata('message'); ?>
 
-                <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newRoleModal">Add New Role</a>
+                <!-- <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newRoleModal">Add New Role</a> -->
 
                 <table width="100%">
                     <thead>
@@ -40,8 +40,6 @@
                                 <td><?= $r['role']; ?></td>
                                 <td>
                                     <a href="<?= base_url('admin/roleaccess/') . $r['id'] ?>" class="badge badge-warning">access</a>
-                                    <a href="" class="badge badge-success">edit</a>
-                                    <a href="" class="badge badge-danger">delete</a>
                                 </td>
                             </tr>
                             <?php $i++; ?>
@@ -57,7 +55,7 @@
 <!-- modal -->
 
 <!-- Modal -->
-<div class="modal fade" id="newRoleModal" tabindex="-1" role="dialog" aria-labelledby="newRoleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="newRoleModal" tabindex="-1" role="dialog" aria-labelledby="newRoleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -80,4 +78,4 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->
