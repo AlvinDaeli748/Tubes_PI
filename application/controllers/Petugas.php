@@ -23,5 +23,39 @@ class Petugas extends CI_Controller
         $this->load->view('templates/admin_sidebar', $data);
         $this->load->view('petugas/profile', $data);
         $this->load->view('templates/admin_footer');
-    }
+	}
+	
+	public function kirimEmail(){
+		$config = [
+			'mailtype'	=>'html',
+			'charset'	=>'utf-8',
+			'protocol'	=>'smtp',
+			'smtp_host'	=>'smtp.gmail.com',
+			'smtp_user'	=>'lycanthrope748@gmail.com',
+			'smtp_pass'	=>'admin098765!',
+			'smtp_crypto'=>'ssl',
+			'smtp_port'	=>'465',
+			'crlf'		=>"\r\n",
+			'newline'	=>"\r\n"
+		];
+		
+		$this->load->library('email', $config);
+		
+		$this->email->from('lycanthrope748@gmail.com');
+		
+		$user = $this->input->post('email');
+		$this->email->to($user); 
+		
+		$rincian = ""; //berisi rincian email
+		$rincianEmail = $rincian;
+
+		$isipesan=$rincianEmail."\nTerima Kasih telah menyumbang ";
+		
+		$this->email->subject('Aktivasi Akun Anda');
+		
+		$this->email->message($isipesan);
+		
+		$this->email->send();
+	}
+
 }
