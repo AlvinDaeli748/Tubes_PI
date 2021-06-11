@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jun 2021 pada 01.06
+-- Waktu pembuatan: 11 Jun 2021 pada 02.20
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -211,7 +211,8 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (11, 2, 'List Sumbangan', 'admin/list_sumbangan', 'las la-receipt', 1),
 (12, 5, 'Sumbangan', 'user/sumbangan', 'las la-donate', 1),
 (13, 5, 'Home', 'user', 'las la-igloo', 1),
-(14, 5, 'My Profile', 'user/profile', 'las la-user', 1);
+(14, 5, 'My Profile', 'user/profile', 'las la-user', 1),
+(15, 1, 'Role', 'admin/role', 'las la-user-tie', 1);
 
 --
 -- Indexes for dumped tables
@@ -297,7 +298,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_menu`
@@ -315,7 +316,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
