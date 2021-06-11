@@ -22,7 +22,7 @@ class User extends CI_Controller
 
 	public function profile()
 	{
-		$data['title'] = 'User Page';
+		$data['title'] = 'My Profile';
 		$data['user'] = $this->db->get_where('user', ['email' =>
 		$this->session->userdata('email')])->row_array();
 		$this->load->view('templates/header', $data);

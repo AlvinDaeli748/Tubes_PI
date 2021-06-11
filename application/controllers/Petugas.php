@@ -22,12 +22,12 @@ class Petugas extends CI_Controller
 
     public function profile()
     {
-        $data['title'] = 'User Page';
+        $data['title'] = 'My Profile';
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
-        $this->load->view('petugas/profile', $data);
+        $this->load->view('user/profile', $data);
         $this->load->view('templates/footer');
     }
 }
