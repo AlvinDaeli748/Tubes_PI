@@ -1,51 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumbangan</title>
-    <link rel="stylesheet" href="<?php echo base_url('assets/user_style.css');?>" />
+<div class="main-content">
+    <header>
+        <h2>
+            <label for="nav-toggle">
+                <span class="las la-bars"></span>
+            </label>
 
-</head>
-<body>
-    <div id="header">
-        <div id="nav">
-        <ul>
-            <li><a href="<?php echo base_url('User/home');?>">Home</a></li>
-            <li><a href=""  class="on" >Sumbangan</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
+            <?= $title; ?>
+        </h2>
+
+
+        <div class="user-wrapper">
+            <img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" width="40px" height="40px" alt="">
+            <div>
+                <h4><?= $user['name']; ?></h4>
+            </div>
         </div>
-       </div>
-       <div id="content">
+    </header>
+    <main>
+      <div id="content">
         <h1 id="title">Form Pendaftaran Sumbangan</h1>
-    <p id="description">Please fill the form, thank you.</p>
-
-    <?php echo form_open('User/tambah_sumbangan_act', 'class="login100-form validate-form"'); ?>
-    <form id="survey-form" enctype="multipart/form-data" method="post">
-      <label for="name" id="name-label">
-        Nama Lengkap
-        <input type="text" name="nama" id="name" placeholder="tuliskan nama lengkap anda" required />
-      </label>
-
-      <label for="email" id="email-label">
-        Email
-        <input type="email" name="email" id="email" placeholder="tuliskan email anda" required />
-      </label>
-
-      <label for="sifat" id="sifat-label"> Sumbangan bersifat? </label>
-
-      <input type="radio" name="sifat" value="Pribadi" checked /> Pribadi <br />
-      <input type="radio" name="sifat" value="Angkatan" /> Angkatan <br /> <br>
-
-      <label for="kelulusan" id="kelulusan-label">
-        Tahun kelulusan
-        <select name="kelulusan" id="date-dropdown" required>
+          <p id="description">Please fill the form, thank you.</p>
+          
+          <?php echo form_open('User/tambah_sumbangan_act', 'class="login100-form validate-form"'); ?>
+          <form id="survey-form" enctype="multipart/form-data" method="post">
+          <label for="name" id="name-label"> 
+            Nama Lengkap 
+          <input type="text" name="nama" id="name" placeholder="tuliskan nama lengkap anda" required />
+          </label>
+          <br>
+          <label for="email" id="email-label">
+            Email
+          <input type="email" name="email" id="email" placeholder="tuliskan email anda" required />
+          </label>
+          <br>
+          <label for="sifat" id="sifat-label"> Sumbangan bersifat? </label><br>
+          <input type="radio" name="sifat" value="Pribadi" checked /> Pribadi <br />
+          <input type="radio" name="sifat" value="Angkatan" /> Angkatan <br /> <br>
+          
+          <label for="kelulusan" id="kelulusan-label">
+            Tahun kelulusan
+          <select name="kelulusan" id="date-dropdown" required>
           <option value="" selected data-default> Select Year  </option>
-
-        </select>
+          </select>
           <script>
             let dateDropdown = document.getElementById('date-dropdown');
 
@@ -63,16 +59,16 @@
           </script>
         <!-- <input type="number" name="kelulusan" id="kelulusan" placeholder="Tahun keberapa anda lulus?" min="1" required="" /> -->
       </label>
-
+      <br><br>
       <label for="sumbangan" id="sumbangan-label">
         Apa yang ingin disumbangkan?
-      </label>
+      </label><br>
       <input type="radio" name="sumbangan" value="Barang" checked /> Barang <br />
       <input type="radio" name="sumbangan" value="Uang" /> Uang <br /> <br>
-
+      <br>
       <label for="Keterangan_sumbangan" id="sumbangan-label">
         Keterangan Sumbangan?
-        <textarea name="keterangan_sumbangan" id="Keterangan_sumbangan" cols="30" rows="10" required></textarea>
+        <br><textarea name="keterangan_sumbangan" id="Keterangan_sumbangan" cols="30" rows="10" required></textarea>
       </label>
 
       <div class="submit"><input type="submit" value="Submit"></div>
@@ -80,6 +76,6 @@
 	</form>
     <br><br>
        </div>
-       <?php include 'footer.php' ?>
-</body>
-</html>
+    </main>
+</div>
+

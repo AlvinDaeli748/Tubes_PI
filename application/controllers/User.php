@@ -118,7 +118,15 @@ class User extends CI_Controller
 	}
 
 	public function sumbangan() {
-		$this->load->view('user/sumbangan');
+		$data['title'] = 'Sumbangan';
+		$data['user'] = $this->db->get_where('user', ['email' =>
+		$this->session->userdata('email')])->row_array();
+		$this->load->view('user/sumbangan',$data);
+
+		$this->load->view('templates/header', $data);
+		$this->load->view('templates/sidebar', $data);
+		$this->load->view('admin/list_sumbangan', $data);
+		$this->load->view('templates/footer');
 	}
 
 	public function tambah_sumbangan() {
@@ -129,6 +137,7 @@ class User extends CI_Controller
 
 	public function tambah_sumbangan_act() {
 		$this->load->model('User_Model');
+
         $nama = $this->input->post('nama');
         $email = $this->input->post('email');
         $sifat = $this->input->post('sifat');
