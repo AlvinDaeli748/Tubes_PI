@@ -20,4 +20,18 @@ class Admin_Model extends CI_Model{
 	public function input_sumbangan($table,$data){
  		$this->db->insert($table,$data);
  	}
+
+	public function tampil_petugas() {
+		return $this->db->get('user')->result_array(); 
+	}
+	
+	public function tambah_petugas($table, $data) {
+		$this->db->insert($table, $data);
+	}
+
+	public function hapus_petugas($where, $table) {
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+
 }

@@ -20,16 +20,12 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href=""><span class="las la-igloo"></span>
+                    <a href="<?php echo base_url('Admin/dashboard'); ?>"><span class="las la-igloo"></span>
                         <span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-users"></span>
+                    <a href="<?php echo base_url('Admin/list_petugas'); ?>"><span class="las la-users"></span>
                         <span>Petugas</span></a>
-                </li>
-                <li>
-                    <a href=""><span class="las la-user-tie"></span>
-                        <span>Tambah Petugas</span></a>
                 </li>
                 <li>
                     <a href="" class="active"><span class="las la-receipt"></span>
@@ -45,13 +41,13 @@
 
     <div class="main-content">
         <header>
-            <h2>
+            <h1>
                 <label for="nav-toggle">
                     <span class="las la-bars"></span>
                 </label>
 
-                Dashboard
-            </h2>
+                Sumbangan
+            </h1>
 
             <div class="search-wrapper">
                 <span class="las la-search"></span>
@@ -73,7 +69,7 @@
                 <div class="projects">
                     <div class="card">
                         <div class="card-header">
-                            <h3>Sumbangan</h3>
+                            <h2>Sumbangan</h2>
                         </div>
                        
                         <div class="card-body">
@@ -81,10 +77,10 @@
                                 <table width="100%">
                                     <thread>
                                         <tr>
-                                            <td>Nama</td>
-                                            <td>Sifat Sumbangan</td>
-                                            <td>Status</td>
-                                            <td>Action</td>
+                                            <td><h3>Nama</h3></td>
+                                            <td><h3>Sifat Sumbangan</h3></td>
+                                            <td><h3>Status</h3></td>
+                                            <td><h3>Action</h3></td>
                                         </tr>
                                     </thread>
                                     <tbody>

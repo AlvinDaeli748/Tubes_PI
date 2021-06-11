@@ -24,15 +24,11 @@
                         <span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('Admin/petugas');?>"><span class="las la-users"></span>
+                    <a href="<?php echo base_url('Admin/list_petugas');?>"><span class="las la-users"></span>
                         <span>Petugas</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-user-tie"></span>
-                        <span>Tambah Petugas</span></a>
-                </li>
-                <li>
-                    <a href=""><span class="las la-receipt"></span>
+                    <a href="<?php echo base_url('Admin/ket_sumbangan');?>"><span class="las la-receipt"></span>
                         <span>Sumbangan</span></a>
                 </li>
                 <li>
@@ -45,13 +41,13 @@
 
     <div class="main-content">
         <header>
-            <h2>
+            <h1>
                 <label for="nav-toggle">
                     <span class="las la-bars"></span>
                 </label>
 
                 Dashboard
-            </h2>
+            </h1>
 
             <div class="search-wrapper">
                 <span class="las la-search"></span>

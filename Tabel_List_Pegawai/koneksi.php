@@ -2,7 +2,7 @@
     $host = "localhost";
     $user = "root";
     $pass = "";
-    $nama_db = "tubes_pi";
+    $nama_db = "tubespi";
     $koneksi = mysqli_connect($host,$user,$pass,$nama_db);
  
     if(!$koneksi)

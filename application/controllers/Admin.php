@@ -53,7 +53,37 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/admin_sumbangan');
 	}
 
-	public function petugas() {
-		$this->load->view('admin/petugas');
+	public function list_petugas() {
+		$data['user'] = $this->Admin_Model->tampil_petugas();
+		$this->load->view('admin/list_petugas', $data);
 	}
+
+	public function tambah_petugas() {
+		$this->load->view('admin/tambah_petugas');
+	}
+
+	public function tambah_petugas_act() {
+		$nama = $this->input->post('nama');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $no_hp = $this->input->post('no_hp');
+
+		$data = array(
+            'nama' => $nama,
+            'username' => $username,
+            'password' => $password,
+            'no_hp' => $no_hp,
+        );
+
+        $this->Admin_Model->tambah_petugas('user', $data);
+
+		redirect(base_url().'Admin/list_petugas');
+	}
+
+	public function hapus_petugas($id) {
+		$where = array('id' => $id);
+		$this->Admin_Model->hapus_petugas($where, 'user');
+		redirect('admin/list_petugas');
+	}
+
 }

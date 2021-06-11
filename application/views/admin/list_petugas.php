@@ -20,19 +20,15 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="" class="active"><span class="las la-igloo"></span>
+                    <a href="<?php echo base_url('Admin/dashboard'); ?>"><span class="las la-igloo"></span>
                         <span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-users"></span>
+                    <a href="" class="active"><span class="las la-users"></span>
                         <span>Petugas</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-user-tie"></span>
-                        <span>Tambah Petugas</span></a>
-                </li>
-                <li>
-                    <a href=""><span class="las la-receipt"></span>
+                    <a href="<?php echo base_url('Admin/ket_sumbangan');?>"><span class="las la-receipt"></span>
                         <span>Sumbangan</span></a>
                 </li>
                 <li>
@@ -45,13 +41,13 @@
 
     <div class="main-content">
         <header>
-            <h2>
+            <h1>
                 <label for="nav-toggle">
                     <span class="las la-bars"></span>
                 </label>
 
-                Dashboard
-            </h2>
+                Petugas
+            </h1>
 
             <div class="search-wrapper">
                 <span class="las la-search"></span>
@@ -72,10 +68,11 @@
                         <div class="customers">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3>Petugas</h3>
-
-                                    <button>Tambah Petugas <span class="las la-arrow-right">   
+                                    <h2>Petugas</h2>
+                                    <form action="<?php echo base_url('Admin/tambah_petugas');?>" method="post" >
+                                    <button>Tambah Petugas<span class="las la-arrow-right">   
                                     </span></button>
+                                    </form>
                                 </div>
 
                                 <div class="card-body">
@@ -83,14 +80,23 @@
                                         <table width="100%">
                                             <thread>
                                                 <tr>
-                                                    <td>Nama</td>
-                                                    <td>Username</td>
-                                                    <td>No. HP <span class="las la-phone"></span></td>
-                                                    <td>Action</td>
+                                                    <td><h3>Nama</h3></td>
+                                                    <td><h3>Email</h3></td>
+                                                    <td><h3>Action</h3></td>
                                                 </tr>
                                             </thread>
                                             <tbody>
-                                                <tr>
+                                            <?php
+                                            foreach($user as $u) :
+                                            ?>
+                                            <tr>
+                                                <td><? = $u['nama'] ?></td>
+                                                <td><? = $u['username'] ?></td>
+                                                <td><? = $u['no_hp'] ?></td>
+                                                <td><button>Delete</button></td>
+                                            </tr>
+                                            <?php endforeach; ?>
+                                                <!-- <tr>
                                                     <td>Willi Nardo</td>
                                                     <td>Frontend</td>
                                                     <td>085276057868</td>
@@ -119,7 +125,7 @@
                                                     <td>Pribadi</td>
                                                     <td>085276057868</td>
                                                     <td><button>Delete</span></button></td>
-                                                </tr>
+                                                </tr> -->
                                             </tbody>
                                         </table>
                                     </div>

@@ -20,12 +20,16 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href=""><span class="las la-igloo"></span>
+                    <a href="<?php echo base_url('Admin/dashboard'); ?>"><span class="las la-igloo"></span>
                         <span>Dashboard</span></a>
                 </li>
                 <li>
                     <a href="" class="active"><span class="las la-users"></span>
                         <span>Petugas</span></a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('Admin/petugas');?>"><span class="las la-user-tie"></span>
+                        <span>Tambah Petugas</span></a>
                 </li>
                 <li>
                     <a href=""><span class="las la-receipt"></span>
