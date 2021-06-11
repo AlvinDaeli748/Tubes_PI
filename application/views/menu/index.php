@@ -39,8 +39,8 @@
                                 <th scope="row"><?= $i; ?></th>
                                 <td><?= $m['menu']; ?></td>
                                 <td>
-                                    <a href="" class="badge rounded-pill bg-success">edit</a>
-                                    <a href="" class="badge rounded-pill bg-danger">delete</a>
+                                    <a href="" class="badge badge-success">edit</a>
+                                    <a href="" class="badge badge-danger">delete</a>
                                 </td>
                             </tr>
                             <?php $i++; ?>
