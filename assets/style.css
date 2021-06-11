@@ -2,22 +2,22 @@ body{
 	font-family: sans-serif;
     background-color: #bdd4e7;
     background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
-    
-    
+
+
 }
- 
+
 h1{
 	text-align: center;
 	/*ketebalan font*/
 	font-weight: 300;
 }
- 
+
 .tulisan_login{
 	text-align: center;
 	/*membuat semua huruf menjadi kapital*/
 	text-transform: uppercase;
 }
- 
+
 .kotak_login{
 	width: 350px;
 	/*meletakkan form ke tengah*/
@@ -30,11 +30,21 @@ h1{
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
- 
+
+.map-warp {
+	padding-left: 100px;
+	padding-top: 150px;
+}
+
+.map-warp iframe {
+	height: 838px;
+	width: 100%;
+}
+
 label{
 	font-size: 11pt;
 }
- 
+
 .form_login{
 	/*membuat lebar form penuh*/
 	box-sizing : border-box;
@@ -44,7 +54,7 @@ label{
 	margin-bottom: 20px;
 
 }
- 
+
 .tombol_login{
 	background: #707070;
 	color: white;

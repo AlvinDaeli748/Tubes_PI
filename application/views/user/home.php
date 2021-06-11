@@ -18,9 +18,7 @@
         </ul>
         </div>
        </div>
-      <h1>Selamat di website sumbangan</h1>
-       <div id="footer">
-        <p>&copy; Copyright kelompok 7 PI kom C</p>
-       </div>
+      <h1>Selamat datang di website sumbangan</h1>
+       <?php include 'footer.php' ?>
 </body>
 </html>

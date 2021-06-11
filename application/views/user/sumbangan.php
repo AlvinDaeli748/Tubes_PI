@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sumbangan</title>
     <link rel="stylesheet" href="<?php echo base_url('assets/user_style.css');?>" />
 
 </head>
@@ -42,7 +42,8 @@
 
       <label for="kelulusan" id="kelulusan-label">
         Tahun kelulusan
-        <select id="date-dropdown">
+        <select name="kelulusan" id="date-dropdown" required>
+          <option value="" selected data-default> Select Year  </option>
 
         </select>
           <script>
@@ -53,6 +54,7 @@
 
             while (currentYear >= earliestYear) {
               let dateOption = document.createElement('option');
+              dateOption.placeholder = "Select Year";
               dateOption.text = currentYear;
               dateOption.value = currentYear;
               dateDropdown.add(dateOption);
@@ -70,7 +72,7 @@
 
       <label for="Keterangan_sumbangan" id="sumbangan-label">
         Keterangan Sumbangan?
-        <textarea name="keterangan_sumbangan" id="Keterangan_sumbangan" cols="30" rows="10"></textarea>
+        <textarea name="keterangan_sumbangan" id="Keterangan_sumbangan" cols="30" rows="10" required></textarea>
       </label>
 
       <div class="submit"><input type="submit" value="Submit"></div>
@@ -78,8 +80,6 @@
 	</form>
     <br><br>
        </div>
-       <div id="footer">
-        <p>&copy; Copyright Kelompok 7 PI Kom C</p>
-       </div>
+       <?php include 'footer.php' ?>
 </body>
 </html>

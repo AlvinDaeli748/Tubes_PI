@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sumbangan</title>
     <link rel="stylesheet" href="<?php echo base_url('assets/user_style.css');?>" />
 </head>
 <body>
@@ -37,7 +37,7 @@
         Tanggal memberikan sumbangan?
         </label>
         <input type="date" /><br><br>
-      
+
 
       <label for="nama_petugas" id="name-label">
         Nama Petugas yang Menerima ?
@@ -53,8 +53,6 @@
     </form>
     <br><br>
        </div>
-       <div id="footer">
-        <p>&copy; Copyright Kelompok 7 PI Kom C</p>
-       </div>
+       <?php include 'footer.php' ?>
 </body>
 </html>

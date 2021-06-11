@@ -12,9 +12,17 @@ class User extends CI_Controller {
 	{
 		$this->load->view('user/home');
 	}
-		
+
 	public function sumbangan(){
 		$this->load->view('user/sumbangan');
+	}
+
+	public function contact(){
+		$this->load->view('User/contact');
+	}
+
+	public function about(){
+		$this->load->view('User/about');
 	}
 
 	public function tambah_sumbangan() {
