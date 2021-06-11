@@ -17,6 +17,10 @@ class Admin_Model extends CI_Model{
 		}
 	}
 
+	// public function tampil_sumbangan() {
+	// 	return $this->db->get('sumbangan')->result_array(); 
+	// }
+
 	public function input_sumbangan($table,$data){
  		$this->db->insert($table,$data);
  	}

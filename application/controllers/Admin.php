@@ -137,4 +137,17 @@ class Admin extends CI_Controller
 		$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">a account has been deleted</div>');
 		redirect('admin/petugas');
 	}
+
+	public function list_sumbangan() {
+		$data['sumbangan'] = $this->db->get('sumbangan')->result_array();
+		$data['title'] = 'List Sumbangan';
+		$data['user'] = $this->db->get_where('user', ['email' =>
+		$this->session->userdata('email')])->row_array();
+		$this->load->view('admin/list_sumbangan',$data);
+
+		$this->load->view('templates/header', $data);
+		$this->load->view('templates/sidebar', $data);
+		$this->load->view('admin/list_sumbangan', $data);
+		$this->load->view('templates/footer');
+	}
 }
