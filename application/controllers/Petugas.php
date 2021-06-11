@@ -64,4 +64,15 @@ class Petugas extends CI_Controller
 		$this->email->send();
 	}
 
+	public function pdf() //fungsi generate pdf dari halaman php
+    {
+        $this->load->library('pdf');
+        $html = $this->load->view('GeneratePdfView', [], true); //GeneratePdfView ada di folder views
+        $this->pdf->createPDF($html, 'mypdf', true);
+	}
+
+	public function petugas(){
+		$this->load->view('ini view petugas');
+	}
+
 }
