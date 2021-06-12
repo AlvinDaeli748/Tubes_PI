@@ -17,6 +17,6 @@
         </div>
     </header>
     <main>
-        <h1> adada</h1>
+
     </main>
 </div>
