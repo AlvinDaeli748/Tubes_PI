@@ -17,6 +17,7 @@
         </div>
     </header>
     <main>
+        <img src="<?= base_url('assets/img/alur.jpg'); ?>" width="80%" height="100%" alt="">
 
     </main>
 </div>
