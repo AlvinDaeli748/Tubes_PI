@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jun 2021 pada 21.40
+-- Waktu pembuatan: 12 Jun 2021 pada 08.37
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -24,6 +24,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `laporan`
+--
+
+CREATE TABLE `laporan` (
+  `id_laporan` int(11) NOT NULL,
+  `judul` varchar(128) NOT NULL,
+  `pembuka` text NOT NULL,
+  `penutup` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `status_sumbangan`
 --
 
@@ -40,24 +53,28 @@ CREATE TABLE `status_sumbangan` (
 --
 
 CREATE TABLE `sumbangan` (
-  `id_user` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `sifat` varchar(10) NOT NULL,
-  `kelulusan` int(4) NOT NULL,
   `sumbangan` varchar(10) NOT NULL,
-  `keterangan_sumbangan` text NOT NULL
+  `keterangan_sumbangan` text NOT NULL,
+  `status` enum('Pending','Disetujui','Ditolak','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `sumbangan`
 --
 
-INSERT INTO `sumbangan` (`id_user`, `nama`, `email`, `sifat`, `kelulusan`, `sumbangan`, `keterangan_sumbangan`) VALUES
-(1, 'Tiara  Amalia', 'tiaraamalia18@gmail.com', '1', 2000, '1', ''),
-(2, 'tes', 'tes@gmail.com', '1', 2001, '1', ''),
-(3, 'tes', 'tes@gmail.com', '1', 3000, '1', ''),
-(4, 'Tiara  Amalia', 'tiaraamalia18@gmail.com', '1', 2022, '1', 'laptop');
+INSERT INTO `sumbangan` (`id`, `nama`, `email`, `sifat`, `sumbangan`, `keterangan_sumbangan`, `status`) VALUES
+(1, 'Tiara  Amalia', 'tiaraamalia18@gmail.com', '1', '1', '', 'Pending'),
+(2, 'tes', 'tes@gmail.com', '1', '1', '', 'Pending'),
+(3, 'tes', 'tes@gmail.com', '1', '1', '', 'Pending'),
+(4, 'Tiara  Amalia', 'tiaraamalia18@gmail.com', '1', '1', 'laptop', 'Pending'),
+(5, 'aaaa', '', '1', '1', 'aaaaaa', 'Pending'),
+(6, 'aaa', '', 'Pribadi', 'Barang', 'aaaaaaa', 'Pending'),
+(7, 'adad', 'adada@gmail.com', 'Pribadi', 'Barang', 'aadad', 'Pending'),
+(8, 'Willi Nardo', 'nardowilli@gmail.com', 'Pribadi', 'Barang', 'aaaa', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -85,7 +102,8 @@ INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_a
 (2, 'alvin daeli', 'alvin@gmail.com', '1.png', '$2y$10$aX0/NLoDeb0mcfutb8FnCem8g6Iax0E6qcM5FWR5HuVCZbxAg.j1.', 3, 1, 1623272824),
 (3, 'Tiara Amalia', 'tiara@gmail.com', 'default.jpg', '$2y$10$rUiKN.pJpOjsKfVu3izwiOTZjIq41oiURZJmyv9SZoj0Kzu.nAtAe', 2, 1, 1623314758),
 (4, 'timothy', 'timo@gmail.com', 'default.jpg', '$2y$10$f0KsSEzgu1KilGANwK59DeGWtgWYYqg93.Z9Ub.azlo2ZuWa8oMJO', 3, 1, 1623354506),
-(8, 'ruth', 'ruth@gmail.com', 'default.jpg', '$2y$10$pftlJYX8ve/GMQtCI09uGeHrgPrxSkU1FjssQRt9VyW/VZIDfpwBC', 2, 1, 1623434448);
+(8, 'ruth', 'ruth@gmail.com', 'default.jpg', '$2y$10$pftlJYX8ve/GMQtCI09uGeHrgPrxSkU1FjssQRt9VyW/VZIDfpwBC', 2, 1, 1623434448),
+(11, 'Willi Nardo', 'nardowilli@gmail.com', 'default.jpg', '$2y$10$Ha.IokeMA.3cOhbdH3lEyOpogKBslN4icM1UllfhAsOvJzvq/JTdS', 3, 1, 1623443198);
 
 -- --------------------------------------------------------
 
@@ -211,13 +229,14 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (5, 1, 'Petugas', 'admin/petugas', 'las la-users', 1),
 (8, 4, 'Menu Management', 'menu', 'las la-ellipsis-h', 1),
 (9, 4, 'Submenu Management', 'menu/submenu', 'las la-folder-open', 1),
-(11, 2, 'List Sumbangan', 'admin/list_sumbangan', 'las la-receipt', 1),
+(11, 2, 'List Sumbangan', 'petugas/list_sumbangan', 'las la-receipt', 1),
 (12, 5, 'Sumbangan', 'user/sumbangan', 'las la-donate', 1),
 (13, 5, 'Home', 'user', 'las la-igloo', 1),
 (14, 10, 'My Profile', 'user/profile', 'las la-user', 1),
 (15, 1, 'Role', 'admin/role', 'las la-user-tie', 1),
 (16, 10, 'Edit Profile', 'user/edit', 'las la-user-tie', 1),
-(17, 10, 'Change Password', 'user/changepassword', 'las la-key', 1);
+(17, 10, 'Change Password', 'user/changepassword', 'las la-key', 1),
+(22, 2, 'Laporan', 'petugas/laporan', 'las la-file-invoice', 1);
 
 -- --------------------------------------------------------
 
@@ -246,7 +265,7 @@ ALTER TABLE `status_sumbangan`
 -- Indeks untuk tabel `sumbangan`
 --
 ALTER TABLE `sumbangan`
-  ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `user`
@@ -304,13 +323,13 @@ ALTER TABLE `status_sumbangan`
 -- AUTO_INCREMENT untuk tabel `sumbangan`
 --
 ALTER TABLE `sumbangan`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
@@ -322,13 +341,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_role`
@@ -340,13 +359,13 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

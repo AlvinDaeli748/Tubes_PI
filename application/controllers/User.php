@@ -144,7 +144,6 @@ class User extends CI_Controller
 		$nama = $this->input->post('nama');
 		$email = $this->session->userdata('email');
 		$sifat = $this->input->post('sifat');
-		$kelulusan = $this->input->post('kelulusan');
 		$sumbangan = $this->input->post('sumbangan');
 		$keterangan_sumbangan = $this->input->post('keterangan_sumbangan');
 
@@ -152,7 +151,6 @@ class User extends CI_Controller
 			'nama' => $nama,
 			'email' => $email,
 			'sifat' => $sifat,
-			'kelulusan' => $kelulusan,
 			'sumbangan' => $sumbangan,
 			'keterangan_sumbangan' => $keterangan_sumbangan
 		);
