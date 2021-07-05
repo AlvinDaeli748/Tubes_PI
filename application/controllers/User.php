@@ -5,6 +5,7 @@ class User extends CI_Controller
 {
 	public function __construct()
 	{
+		$this->load->model('user_model');
 		parent::__construct();
 		is_logged_in();
 	}
