@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://47.254.251.165:83/Tubes_PI/';
+$config['base_url'] = 'http://47.254.251.165:83/';
 
 /*
 |--------------------------------------------------------------------------
