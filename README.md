@@ -3,5 +3,10 @@ Repository untuk Tugas Besar Pemrograman Integrative
 
 
 keterangan 
-membedakan data-data view pada admin/petugas/user
 
+
+assets/admin_style.css untuk file admin.html dan petugas.html
+
+
+
+assets/admin.css untuk file admin_sumbangan.html , list_petugas.html

@@ -6,9 +6,7 @@ class Menu extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if (!$this->session->userdata('email')) {
-            redirect('auth');
-        }
+        is_logged_in();
     }
 
     public function index()
@@ -66,5 +64,21 @@ class Menu extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">New sub Menu Added!</div>');
             redirect('menu/submenu');
         }
+    }
+
+    public function hapusmenu($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('user_menu');
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">a menu has been deleted</div>');
+        redirect('menu');
+    }
+
+    public function hapussubmenu($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('user_sub_menu');
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">a sub menu has been deleted</div>');
+        redirect('menu/submenu');
     }
 }
